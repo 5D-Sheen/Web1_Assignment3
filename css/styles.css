@@ -1,0 +1,70 @@
+/* ===== TASK 1: Animation section (mobile-first, own CSS only) ===== */
+
+/* Base styles = phone (375px). No media query needed. */
+.movie-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: 1fr;          /* 1 item per row */
+  gap: 1rem;
+}
+
+.movie-item {
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.movie-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
+
+.movie-item h3 {
+  margin: 0;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+/* Tablet: 768px and up */
+@media (min-width: 768px) {
+  .movie-section {
+    padding: 3rem 2rem;                /* more spacing */
+  }
+
+  .section-title {
+    font-size: 2rem;                   /* bigger heading */
+    text-align: left;                  /* alignment changes */
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(2, 1fr);   /* 2 per row */
+    gap: 1.5rem;
+  }
+}
+
+/* Laptop: 995px and up */
+@media (min-width: 995px) {
+  .movie-grid {
+    grid-template-columns: repeat(4, 1fr);   /* 4 per row */
+  }
+}
+
+/* Makes all posters the same shape even if the images differ in size */
+.card-img-top {
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+}
